@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/blake-georgii/challenge-module10/issues"
   },
-  "homepage": "https://github.com/blake-georgii/challenge-module10#readme"
+  "homepage": "https://github.com/blake-georgii/challenge-module10#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.1"
+  }
 }
