@@ -1,0 +1,22 @@
+{
+  "name": "challenge-module10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blake-georgii/challenge-module10.git"
+  },
+  "author": "Blake Georgii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blake-georgii/challenge-module10/issues"
+  },
+  "homepage": "https://github.com/blake-georgii/challenge-module10#readme"
+}
