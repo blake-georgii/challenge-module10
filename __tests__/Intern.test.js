@@ -8,3 +8,9 @@ test('creates an Intern object', () => {
     expect(intern.email).toBe('dave@davemail.com');
     expect(engineer.school).toBe('dave-school');
 });
+
+test('getRole() returns "Intern"', () => {
+    const intern = new Intern('Dave', 1, 'dave@davemail.com', 'dave-school');
+
+    expect(intern.getRole()).toEqual(expect.stringContaining('Intern'));
+});
