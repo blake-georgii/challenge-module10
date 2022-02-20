@@ -19,3 +19,9 @@ test('getId() works correctly', () => {
 
     expect(employee.getId()).toEqual(expect.stringContaining(employee.id.toString()));
 });
+
+test('getEmail() works correctly', () => {
+    const employee = new Employee('Dave', 1, 'dave@davemail.com');
+
+    expect(employee.getEmail()).toEqual(expect.stringContaining('dave@davemail.com'));
+});
