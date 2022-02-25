@@ -112,7 +112,12 @@ function promptEngineer() {
 }
 
 function promptIntern() {
-
+    inquirer.prompt(internQuestions)
+        .then(internData => {
+            let intern = new Intern(internData.name, internData.id, internData.email, internData.gitHub)
+            team.push(intern);
+            promptAddOrQuit();
+        });
 }
 
 promptManager();
