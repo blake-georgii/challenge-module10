@@ -75,15 +75,29 @@ const internQuestions = [
 
 function promptManager() {
     inquirer.prompt(managerQuestions)
-    .then(managerData => {
-        let manager = new Manager(managerData.name, managerData.id ,managerData.email ,managerData.officeNumber);
-        team.push(manager);
-        promptAddOrQuit();
-    });
+        .then(managerData => {
+            let manager = new Manager(managerData.name, managerData.id, managerData.email, managerData.officeNumber);
+            team.push(manager);
+            promptAddOrQuit();
+        });
 }
 
 function promptAddOrQuit() {
-    
+    inquirer.prompt([
+        {
+            type: 'list',
+            name: 'type',
+            message: 'Add another employee or quit?',
+            choices: ['Engineer', 'Intern', 'Quit'],
+        },])
+        .then(choice => {
+            if (choice == 'Engineer') {
+                promptEngineer();
+            }
+            else if (choice == 'Intern') {
+                promptIntern()
+            }
+        })
 }
 
 function promptEngineer() {
