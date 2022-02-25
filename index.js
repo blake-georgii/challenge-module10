@@ -1,6 +1,8 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 
 const team = [];
 
@@ -45,7 +47,7 @@ const engineerQuestions = [
     },
     {
         type: 'input',
-        name: 'name',
+        name: 'gitHub',
         message: 'Input Engineer GitHub:'
     },
 ];
@@ -91,17 +93,22 @@ function promptAddOrQuit() {
             choices: ['Engineer', 'Intern', 'Quit'],
         },])
         .then(choice => {
-            if (choice == 'Engineer') {
+            if (choice.type == 'Engineer') {
                 promptEngineer();
             }
-            else if (choice == 'Intern') {
+            else if (choice.type == 'Intern') {
                 promptIntern()
             }
         })
 }
 
 function promptEngineer() {
-
+    inquirer.prompt(engineerQuestions)
+        .then(engineerData => {
+            let engineer = new Engineer(engineerData.name, engineerData.id, engineerData.email, engineerData.gitHub)
+            team.push(engineer);
+            promptAddOrQuit();
+        })
 }
 
 function promptIntern() {
