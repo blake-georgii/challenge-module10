@@ -72,3 +72,21 @@ const internQuestions = [
     },
 ];
 
+function promptManager() {
+    inquirer(managerQuestions)
+    .then(managerData => {
+
+    });
+}
+
+function promptAddOrQuit() {
+
+}
+
+function promptEngineer() {
+
+}
+
+function promptIntern() {
+
+}
