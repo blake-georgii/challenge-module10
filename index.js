@@ -1,5 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
+const Manager = require('./lib/Manager');
 
 const team = [];
 
@@ -73,14 +74,16 @@ const internQuestions = [
 ];
 
 function promptManager() {
-    inquirer(managerQuestions)
+    inquirer.prompt(managerQuestions)
     .then(managerData => {
-
+        let manager = new Manager(managerData.name, managerData.id ,managerData.email ,managerData.officeNumber);
+        team.push(manager);
+        promptAddOrQuit();
     });
 }
 
 function promptAddOrQuit() {
-
+    
 }
 
 function promptEngineer() {
@@ -90,3 +93,5 @@ function promptEngineer() {
 function promptIntern() {
 
 }
+
+promptManager();
