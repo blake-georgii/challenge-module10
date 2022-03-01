@@ -89,8 +89,8 @@ function promptAddOrQuit() {
         {
             type: 'list',
             name: 'type',
-            message: 'Add another employee or quit?',
-            choices: ['Engineer', 'Intern', 'Quit'],
+            message: 'Add another employee or finish?',
+            choices: ['Engineer', 'Intern', 'Finish'],
         },])
         .then(choice => {
             if (choice.type == 'Engineer') {
@@ -98,6 +98,9 @@ function promptAddOrQuit() {
             }
             else if (choice.type == 'Intern') {
                 promptIntern()
+            }
+            else{
+                MakeHTML();
             }
         })
 }
@@ -120,4 +123,8 @@ function promptIntern() {
         });
 }
 
+function MakeHTML(){
+    
+}
 
+promptManager();
