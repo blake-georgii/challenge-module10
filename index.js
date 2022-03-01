@@ -1,8 +1,9 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const Manager = require('./Manager');
-const Engineer = require('./Engineer');
-const Intern = require('./Intern');
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+const htmlGenerator = require('./src/htmlGenerator');
 
 let team = [];
 
@@ -70,7 +71,7 @@ const internQuestions = [
     },
     {
         type: 'input',
-        name: 'name',
+        name: 'school',
         message: 'Input Intern School:'
     },
 ];
@@ -124,7 +125,8 @@ function promptIntern() {
 }
 
 function MakeHTML(){
-    
+    fs.writeFileSync('./dist/index.html', htmlGenerator(team));
+    fs.copyFileSync('./src/style.css', './dist/style.css')
 }
 
 promptManager();
