@@ -38,18 +38,30 @@ function htmlGenerator(team) {
 
 function cardGenerator(teamMember) {
 
+    let listItem = ''
+
+    if(teamMember.getRole() == 'Engineer'){
+        listItem = `GitHub: ${teamMember.github}`
+    }
+    else if(teamMember.getRole() == 'Intern'){
+        listItem = `School: ${teamMember.school}`
+    }
+    else{
+        listItem = `Office Number: ${teamMember.officeNumber}`
+    }
+
     return `
     <div class="col-2">
             <div class="card" style="width: 15rem;">
                 <div class="card-header">
-                    <h2>test</h2>
-                    <h3>test</h3>
+                    <h2>${teamMember.name}</h2>
+                    <h3>${teamMember.getRole()}</h3>
                 </div>
 
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
+                    <li class="list-group-item">ID: ${teamMember.id}</li>
+                    <li class="list-group-item">Email: ${teamMember.email}</li>
+                    <li class="list-group-item">${listItem}</li>
                 </ul>
             </div>
         </div>
