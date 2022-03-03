@@ -1,0 +1,16 @@
+header{
+    height: 10em;
+    background-color: rgb(255, 50, 50);
+    margin-bottom: 20px;
+}
+
+h1{
+    font: bold;
+    color: white;
+}
+
+.card {
+    margin: 20px;
+}
+
+
