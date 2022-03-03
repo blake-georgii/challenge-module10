@@ -41,7 +41,7 @@ function cardGenerator(teamMember) {
     let listItem = ''
 
     if(teamMember.getRole() == 'Engineer'){
-        listItem = `GitHub: ${teamMember.github}`
+        listItem = `GitHub: <a href="https://github.com/${teamMember.github}" target="_blank">${teamMember.github}</a>`
     }
     else if(teamMember.getRole() == 'Intern'){
         listItem = `School: ${teamMember.school}`
@@ -60,7 +60,7 @@ function cardGenerator(teamMember) {
 
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${teamMember.id}</li>
-                    <li class="list-group-item">Email: ${teamMember.email}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${teamMember.email}" target="_blank">${teamMember.email}</a></li>
                     <li class="list-group-item">${listItem}</li>
                 </ul>
             </div>
